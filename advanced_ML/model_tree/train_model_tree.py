@@ -24,6 +24,10 @@ parser.add_argument("--model_tree_visual",
                     help = "a png file to save a visual of the model tree (none if not indicated)",
                     type = str,
                     default = None)
+parser.add_argument("--y_header",
+                    help = "the column header of the target variable in the csv dataset",
+                    type = str,
+                    default = "y")
 parser.add_argument("--seed",
                     help = "a seed for the random permutation",
                     type = int,
@@ -46,7 +50,8 @@ def main():
     # Load data
     # ====================
     data_csv_data_filename = os.path.join(args.data)
-    X, y, header = load_csv_data(data_csv_data_filename, mode = mode, verbose = True)
+    X, y, header = load_csv_data(data_csv_data_filename,
+                                 mode = mode, y_header = args.y_header, verbose = True)
 
     # *********************************************
     #

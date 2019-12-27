@@ -7,15 +7,15 @@ import numpy as np
 import pandas as pd
 from copy import copy
 
-def load_csv_data(input_csv_filename, mode="clf", verbose=False):
+def load_csv_data(input_csv_filename, mode = "clf", y_header = "y", verbose=False):
     if verbose:
         print("Loading data from '{}' (mode={})...".format(input_csv_filename, mode))
     df = pd.read_csv(input_csv_filename)  # dataframe
     df_header = df.columns.values  # header
     header = list(df_header)
     N, d = len(df), len(df_header) - 1
-    X = np.array(df.drop(['y'], axis=1))  # extract X by dropping y column
-    y = np.array(df['y'])  # extract y
+    X = np.array(df.drop([y_header], axis=1))  # extract X by dropping y column
+    y = np.array(df[y_header])  # extract y
     y_classes = list(set(y))
     assert X.shape == (N, d)  # check X.shape
     assert y.shape == (N,)  # check y.shape

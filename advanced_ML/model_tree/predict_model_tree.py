@@ -22,6 +22,10 @@ parser.add_argument("model_tree",
                     help = "a pickle file to dump the model tree to.")
 parser.add_argument("predictions",
                     help = "name of csv to output predictions to")
+parser.add_argument("--y_header",
+                    help = "the column header of the target variable in the csv dataset",
+                    type = str,
+                    default = "y")
 parser.add_argument("--seed",
                     help = "a seed for the random permutation",
                     type = int,
