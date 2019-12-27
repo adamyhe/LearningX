@@ -49,8 +49,7 @@ def main():
     # ====================
     # Load data
     # ====================
-    data_csv_data_filename = os.path.join(args.data)
-    X, y, header = load_csv_data(data_csv_data_filename,
+    X, y, header = load_csv_data(args.data, 
                                  mode = mode, y_header = args.y_header, verbose = True)
 
     # *********************************************
