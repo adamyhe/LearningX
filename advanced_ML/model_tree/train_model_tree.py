@@ -42,7 +42,7 @@ def main():
     # ====================
     # Settings
     # ====================
-    mode = "clf"  # "clf" / "regr"
+    mode = "regr"  # "clf" / "regr"
     #save_model_tree = True  # save model tree?
     #save_model_tree_predictions = True  # save model tree predictions/explanations?
 
