@@ -90,7 +90,7 @@ def main():
     model = logistic_regr
 
     # Build model tree
-    model_tree = ModelTree(logistic_regr, max_depth = 4, min_samples_leaf = 10,
+    model_tree = ModelTree(model, max_depth = 4, min_samples_leaf = 10,
                            search_type = "greedy", n_search_grid = 100)
 
     # ====================
@@ -100,6 +100,7 @@ def main():
     print(model.__class__)
     print(X)
     print(y)
+    print(len(y))
     model_tree.fit(X, y, verbose = True)
     y_pred = model_tree.predict(X)
     explanations = model_tree.explain(X, header)
