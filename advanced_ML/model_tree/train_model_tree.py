@@ -97,10 +97,6 @@ def main():
     # Train model tree
     # ====================
     print("Training model tree with '{}'...".format(model.__class__.__name__))
-    print(model.__class__)
-    print(X)
-    print(y)
-    print(len(y))
     model_tree.fit(X, y, verbose = True)
     y_pred = model_tree.predict(X)
     explanations = model_tree.explain(X, header)
