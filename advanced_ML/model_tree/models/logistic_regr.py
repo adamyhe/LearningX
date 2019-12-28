@@ -9,7 +9,7 @@ class logistic_regr:
 
     def __init__(self):
         from sklearn.linear_model import LogisticRegression
-        self.model = LogisticRegression(penalty = "l2", solver = 'lbfgs')
+        self.model = LogisticRegression(penalty = "l2", solver = 'liblinear')
         self.flag = False
         self.flag_y_pred = None
 
