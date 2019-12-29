@@ -7,6 +7,7 @@
 """
 
 import argparse
+import numpy as np
 import os, pickle, csv
 from src.ModelTree import ModelTree
 from src.utils import load_csv_data, cross_validate

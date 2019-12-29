@@ -4,12 +4,13 @@
 
 """
 from sklearn.metrics import mean_squared_error
+import numpy as np
 
 class logistic_regr:
 
     def __init__(self):
         from sklearn.linear_model import LogisticRegression
-        self.model = LogisticRegression(penalty = "l2")
+        self.model = LogisticRegression(penalty = "l2", class_weight = 'balanced')
         self.flag = False
         self.flag_y_pred = None
 
