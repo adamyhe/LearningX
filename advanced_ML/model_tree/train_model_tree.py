@@ -99,11 +99,13 @@ def main():
     # ====================
     print("Training model tree with '{}'...".format(model.__class__.__name__))
     model_tree.fit(X, y, verbose = True)
+    print("Successfully trained model tree. Computing training loss ...")
     y_pred = model_tree.predict(X)
     explanations = model_tree.explain(X, header)
     loss = model_tree.loss(X, y, y_pred)
     print(" -> loss_train={:.6f}\n".format(loss))
-    if args.model_tree_visual != None:    
+    if args.model_tree_visual != None:
+        print("Saving visual of model tree to %s" % args.model_tree_visual)
         model_tree.export_graphviz(args.model_tree_visual, header,
                                    export_png = True, export_pdf = False)
 
@@ -117,6 +119,7 @@ def main():
     # Cross-validate model tree
     # ====================
     if args.cross_validate:
+        print("Cross-validating ...")
         cross_validate(model_tree, X, y, kfold = 5, seed = args.seed)
 
 # Driver
