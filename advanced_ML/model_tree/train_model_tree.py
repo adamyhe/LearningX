@@ -88,7 +88,7 @@ def main():
     from models.DT_sklearn_clf import DT_sklearn_clf
 
     # Choose model
-    model = logistic_regr()
+    model = modal_clf()
 
     # Build model tree
     model_tree = ModelTree(model, max_depth = 4, min_samples_leaf = 10,
